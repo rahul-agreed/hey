@@ -31,7 +31,8 @@ export default class authenticate extends React.Component {
         .then((response) => response.json())
         .then((responseJson)=>{
             if(responseJson.response.status == 'Success') {
-                alert('Successfully Login.');
+                //alert('Successfully Login.');
+                this.props.navigation.navigate("group")
                 //this.props.navigation.navigate("Group1",{chatroom_id:this.state.chatroomId});
             }
             else {
@@ -82,6 +83,9 @@ const styles=StyleSheet.create({
         padding:10,
         margin:10,
         alignItems: 'center',
+    },
+    margintop:{
+        marginTop:50, 
     }
     
 });
