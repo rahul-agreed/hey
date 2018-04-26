@@ -6,15 +6,15 @@ import login from './pages/components/Login/login.js';
 import group from './pages/components/Group/group.js';
 
 const Navigation = StackNavigator({
-     login: {
+  login: {
     screen: login
-    },
-    group: {
+  },
+  group: {
     screen: group
   },
-    splashscreen: {
+  splashscreen: {
       screen: splashscreen
-      }
+  }
     
 });
 

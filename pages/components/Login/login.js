@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, KeyboardAvoidingView, } from 'react-native';
-
+import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, KeyboardAvoidingView, Image, } from 'react-native';
 
 export default class authenticate extends React.Component {
     static navigationOptions = {
@@ -46,29 +45,47 @@ export default class authenticate extends React.Component {
     render() {
         
       return (
-          <KeyboardAvoidingView behavior="padding">
-        <ScrollView>
-            <View>
-            <TextInput style={styles.components} placeholder="Username" placeholderTextColor='#222' onChangeText={username => this.setState({username})} />
-            </View>
-            <View >
-                <TextInput style={styles.components} placeholder="Password" placeholderTextColor='#222' onChangeText={password => this.setState({password})}/>
-            </View>
-            
-            <View >
-            <TouchableOpacity onPress={() => this.login()}>
-                <View style={styles.button}>
-                    <Text >Submit</Text>
+        <KeyboardAvoidingView  behavior="padding" >
+            <ScrollView>
+                <View style={styles.container} source={require('../../../img/patternbg.png')} >
+                    <View style = {{alignItems: 'center'}}>
+                    <Image source={require('../../../img/logo.png')} style={styles.logo} />
+                    </View>
+                    <View>
+                        <TextInput style={styles.components} placeholder="Username" placeholderTextColor='#222' onChangeText={username => this.setState({username})} />
+                    </View>
+                    <View >
+                        <TextInput style={styles.components} placeholder="Password" placeholderTextColor='#222' onChangeText={password => this.setState({password})}/>
+                    </View>
+                    <View >
+                        <TouchableOpacity onPress={() => this.login()}>
+                            <View style={styles.button}>
+                                <Text style={styles.buttontext}>SUBMIT</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </TouchableOpacity>
-            </View>
-        </ScrollView>
+            </ScrollView>
         </KeyboardAvoidingView>
       );
     }
   }
   
 const styles=StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: '#ecf0f1',
+        padding:10,
+        width:'100%',
+      height:'100%',
+    },
+    logo:{
+        flex: 1,
+        justifyContent: 'center',
+        marginTop:50,
+        marginBottom:30,
+    },
     components:{
         borderWidth:1,
         borderColor:'#ccc',
@@ -77,15 +94,18 @@ const styles=StyleSheet.create({
     },
     button:{
         borderWidth:1,
-        borderColor:'#00F',
-        backgroundColor:'#00F',
+        borderColor:'#3a2d7d',
+        backgroundColor:'#3a2d7d',
         //color:'#fff',
         padding:10,
         margin:10,
         alignItems: 'center',
     },
+    buttontext:{
+        color:'#fff',
+        fontSize:16,
+    },
     margintop:{
         marginTop:50, 
     }
-    
 });
