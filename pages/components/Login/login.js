@@ -1,12 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity, KeyboardAvoidingView, Image, } from 'react-native';
-
 export default class authenticate extends React.Component {
     static navigationOptions = {
         header: null,
         };
     constructor(props){
-
         super()
         this.state={
             username:'',
@@ -43,9 +41,8 @@ export default class authenticate extends React.Component {
         }
     }
     render() {
-        
       return (
-        <KeyboardAvoidingView  behavior="padding" >
+        <KeyboardAvoidingView style={styles.mainScrollContainer} behavior="padding">
             <ScrollView>
                 <View style={styles.container} source={require('../../../img/patternbg.png')} >
                     <View style = {{alignItems: 'center'}}>
@@ -72,6 +69,9 @@ export default class authenticate extends React.Component {
   }
   
 const styles=StyleSheet.create({
+    mainScrollContainer: {
+        flex: 1,
+      },
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -83,7 +83,7 @@ const styles=StyleSheet.create({
     logo:{
         flex: 1,
         justifyContent: 'center',
-        marginTop:50,
+        marginTop:'40%',
         marginBottom:30,
     },
     components:{
