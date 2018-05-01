@@ -16,11 +16,9 @@ export default class group extends Component {
     return (
       <KeyboardAvoidingView style={styles.mainScrollContainer} behavior="padding" >
         <ScrollView source={require('../../../img/xlarge.jpg')}>
-        
           <FlatList
             data={[{key: 'Rahul', id:'1'}, {key: 'Sunil Sir', id:'2'}, {key: 'Anurag', id:'3'}, {key: 'Abdullah', id:'4'}, {key: 'Roy', id:'5'}, {key: 'Anurag', id:'6'}, {key: 'Abdullah', id:'7'}, {key: 'Rahul', id:'8'}, {key: 'Anurag', id:'9'}, {key: 'Abdullah', id:'10'}, {key: 'Roy', id:'11'}]}
             renderItem={({item}) =>
-                  
             <Text onPress={() => this.props.navigation.navigate('authenticate')} style={styles.grouplist}>            
             <Image style={styles.user} source={require('../../../img/user.png')}/> {item.key}  <Image style={styles.rightarrow} source={require('../../../img/rightarrow.png')}  />
             </Text>
