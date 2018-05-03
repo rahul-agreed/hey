@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, StyleSheet  } from 'react-native';
+import { Image, View, StyleSheet, ImageBackground  } from 'react-native';
 
 
 export default class authenticate extends React.Component {
@@ -9,8 +9,9 @@ export default class authenticate extends React.Component {
     render() { 
       return (
         
-        <View source={require('../img/xlarge.jpg')}  style={styles.backgroundImage}>
-        
+        <View  style={styles.backgroundImage}>
+          <Image style={styles.mainimg} source={require('../img/xlarge.jpg')}/>
+          
         </View>
       );
     }
@@ -19,7 +20,15 @@ export default class authenticate extends React.Component {
   
   const styles=StyleSheet.create({
       backgroundImage:{
-      width:'100%',
-      height:'100%',
-    }
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+      width: null,
+      height: null,
+    },
+    mainimg:{
+      flex: 1,
+      resizeMode: 'cover',
+      width:'100%'
+    },
 });

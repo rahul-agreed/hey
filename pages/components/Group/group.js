@@ -33,6 +33,7 @@ export default class group extends Component {
 const styles=StyleSheet.create({
   mainScrollContainer: {
     flex: 1,
+    
   },
   backgroundImage:{
   width:'100%',

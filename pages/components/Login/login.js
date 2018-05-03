@@ -43,7 +43,7 @@ export default class authenticate extends React.Component {
     render() {
       return (
         <KeyboardAvoidingView style={styles.mainScrollContainer} behavior="padding">
-            <ScrollView>
+         
                 <View style={styles.container} source={require('../../../img/patternbg.png')} >
                     <View style = {{alignItems: 'center'}}>
                     <Image source={require('../../../img/logo.png')} style={styles.logo} />
@@ -54,6 +54,7 @@ export default class authenticate extends React.Component {
                     <View >
                         <TextInput style={styles.components} placeholder="Password" placeholderTextColor='#222' onChangeText={password => this.setState({password})}/>
                     </View>
+                    
                     <View >
                         <TouchableOpacity onPress={() => this.login()}>
                             <View style={styles.button}>
@@ -62,7 +63,6 @@ export default class authenticate extends React.Component {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </ScrollView>
         </KeyboardAvoidingView>
       );
     }
@@ -71,20 +71,17 @@ export default class authenticate extends React.Component {
 const styles=StyleSheet.create({
     mainScrollContainer: {
         flex: 1,
-      },
-    container: {
-        flex: 1,
-        justifyContent: 'center',
         backgroundColor: '#ecf0f1',
+    },
+    container: {
         padding:10,
-        width:'100%',
-      height:'100%',
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
     },
     logo:{
-        flex: 1,
-        justifyContent: 'center',
-        marginTop:'40%',
         marginBottom:30,
+       //marginTop:'40%'
     },
     components:{
         borderWidth:1,
@@ -96,7 +93,6 @@ const styles=StyleSheet.create({
         borderWidth:1,
         borderColor:'#3a2d7d',
         backgroundColor:'#3a2d7d',
-        //color:'#fff',
         padding:10,
         margin:10,
         alignItems: 'center',

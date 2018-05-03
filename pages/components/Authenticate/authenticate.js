@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, StyleSheet,Text, TextInput,TouchableOpacity } from 'react-native';
+import { Image, View, StyleSheet,Text, TextInput,TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
 
 export default class authenticate extends React.Component {
@@ -8,11 +8,11 @@ export default class authenticate extends React.Component {
       };
     render() { 
       return (
-        
-        <View source={require('../../../img/xlarge.jpg')} style={styles.backgroundImage}>
+        <KeyboardAvoidingView style={styles.mainScrollContainer} behavior="padding">
+        <View source={require('../../../img/xlarge.jpg')} style={styles.container}>
             <View style={styles.components}>
               <Text style={styles.inputlabel}>
-                Question 1
+                When building your own native code,  GIF and WebP are not supported When building your 
               </Text>
             </View>
             <View style={styles.components}>
@@ -26,20 +26,27 @@ export default class authenticate extends React.Component {
               </TouchableOpacity>
             </View>
         </View>
+        </KeyboardAvoidingView>
       );
     }
     
   }
   
   const styles=StyleSheet.create({
-      backgroundImage:{
-      width:'100%',
-      height:'100%',
+    mainScrollContainer: {
+      flex: 1,
+      backgroundColor: '#ecf0f1',
+  },
+  container:{
       padding:20,
+      flex: 1,
+      flexDirection: 'column',
+      justifyContent: 'center',
     },
     inputlabel:{
       padding:10,
       fontSize:16,
+      lineHeight:28,
     },
     inputStyle:{
       borderWidth:1,
